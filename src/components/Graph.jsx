@@ -42,29 +42,25 @@ const Graph = () => {
 
   return (
     <div className="p-4 mt-10">
-      <div className="text-center mb-6">
-        <h1 className="text-2xl md:text-3xl text-dark-gray font-semibold">
+      <div className="mb-6 flex items-center flex-col md:flex-row justify-between">
+        <h1 className="text-2xl md:text-3xl text-dark-gray font-semibold md:mr-4">
           Revenue
         </h1>
-      </div>
-      <div className="text-center mb-4">
-        <span className="mr-2 h-2 w-2 bg-light-blue rounded-full inline-block"></span>
-        <span className="text-xs md:text-sm font-semibold">Sales</span>
-        <span className="ml-4 md:ml-8 mr-2 h-2 w-2 bg-black rounded-full inline-block"></span>
-        <span className="text-xs md:text-sm font-semibold">Appointments</span>
-      </div>
-      <div className="text-center mb-4 md:mb-0">
-        <h2 className="text-xs md:text-base text-gray-text font-normal">
-          Last 12 Months
-        </h2>
-        <img src={Chevron} alt="arrow" className="w-3 h-3 inline-block" />
+        <div className="text-xs md:text-base text-gray-text font-normal flex items-center">
+          <span className="mr-2 h-2 w-2 bg-light-blue rounded-full inline-block"></span>
+          Sales
+          <span className="ml-4 md:ml-8 mr-2 h-2 w-2 bg-black rounded-full inline-block"></span>
+          Appointments
+          <span className="md:ml-4">Last 12 Months</span>
+          <img src={Chevron} alt="arrow" className="w-[31px] h-[31px] ml-2" />
+        </div>
       </div>
       <div className="mb-4">
         <Chart
           options={state.options}
           series={state.series}
           type="bar"
-          width="100%" // Make the chart width 100% for responsiveness
+          width="100%"
           height={320}
         />
       </div>
